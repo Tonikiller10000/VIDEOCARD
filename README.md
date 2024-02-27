@@ -31,7 +31,9 @@ After seing the Ben Eater Videocard series and some other videos about computers
 
 <table>
   <tr>
-    <td>Next, I wanted to make the modulse separated (Hsync and Vsync](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.3/t1.jpg), witch I realised wasn\`t a very good idea, and I combined all the screen sync on one [board](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/s2.jpg). </td>
+    <td>
+    Next, I wanted to make the modulse separated Hsync and Vsync [modules](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.3/t1.jpg), 
+    witch I realised wasn\`t a very good idea, and I combined all the screen sync on one [board](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/s2.jpg). </td>
     <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/s3.jpg"></td>
     <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/s1.jpg"></td>
   </tr>
