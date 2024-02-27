@@ -5,22 +5,16 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
 
 
 
+### VGA Port Pinout
 
 
 
 ### Pinout
-- EEPROM Data pins
-    - D0-D7     : Data EEPROM IO pins
-- Shift Register control pins
-    - CLK       : Shift Register CLK pin
-    - LATCH     : Shift Register Latch pin
-    - OE        : Shift Register OE pin
-    - DataIn    : Shift Register Serial Data In pin
-- EEPROM control pins
-    - WE        : EEPROM Write Enable pin
-    - OE        : EEPROM Output Enable pin
-    - GND       : arduino GND
-    - VCC       : arduino 5V
+1 RED
+2 GREEN
+3 BLUE
+4 RES
+5 GND
 
 
 
