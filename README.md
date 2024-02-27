@@ -5,13 +5,42 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
 
 
 
-### VGA Port Pinout
+
+
+
+## SVGA Signal 800x600 @ 60Hz timing
+
+### General timing
+<table>
+  <tr><td>Screen refresh rate   </td><td>60 Hz</td></tr>      
+  <tr><td>Vertical refresh      </td><td>37.878787878788 kHz</td></tr>  
+  <tr><td>Pixel freq.           </td><td>40.0 MHz</td></tr>   
+  <tr><td>Used Pixel freq.      </td><td>10.0 MHz</td></tr>   
+</table>
+
+### Horizontal timing (line)
+<table>
+  <tr><td>Scanline part</td> <td>Pixels</td> <td>Time [us]</td> <td>Used Pixels</td> <td>Reached Pixel</td> <td>Binnary</td> </tr>
+  <tr><td>Visible area</td>  <td>800</td>    <td>20</td>        <td>200</td> <td>200</td>  <td>0 1100 1000</td> </tr>
+  <tr><td>Front porch</td>   <td>40</td>     <td>1</td>         <td>10</td>  <td>210</td>  <td>0 1101 0010</td> </tr>
+  <tr><td>Sync pulse</td>    <td>128</td>    <td>3.2</td>       <td>32</td>  <td>242</td>  <td>0 1111 0010</td> </tr>
+  <tr><td>Back porch</td>    <td>88</td>     <td>2.2</td>       <td>22</td>  <td>264</td>  <td>1 0000 1000</td> </tr>
+  <tr><td>Whole line</td>    <td>1056</td>   <td>26.4</td>      <td>264</td> <td>   </td>  <td></td> </tr>
+</table>
 
 
 
 
-### Pinout
 
+
+
+
+
+
+
+
+
+## VGA Port Pinout
 <table>
   <tr><td>Pin number</td>   <td>Name</td>   <td>Dir</td>    <td>Description</td></tr>
   <tr><td>1</td>            <td>RED</td>    <td>--></td>    <td>Red Video(75 ohm, 0.7V)</td></tr>
@@ -67,7 +96,6 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/s1.png">
 
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/8clo.png">
-<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/ana.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/bird.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/e1.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/e2.png">
