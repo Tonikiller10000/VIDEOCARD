@@ -17,11 +17,16 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
 4. RES
 5. GND
 
-| :---          |   :---    | 
-| Pin Number    | Pin Name  | 
-| 1             | RED       | 
-| 2             | GREEN     | 
-| 3             | BLUE      | 
+<table>
+  <tr><td>Pin number</td><td>Name</td><td>Dir</td><td>Description</td></tr>
+  <tr><td>1</td><td>RED</td>    <td>--></td><td>Red Video(75 ohm, 0.7V)</td></tr>
+  <tr><td>2</td><td>GREEN</td>  <td>--></td><td></td></tr>
+  <tr><td>3</td><td>BLUE</td>   <td>--></td><td></td></tr>
+  <tr><td>4</td><td>RES</td>    <td>   </td><td></td></tr>
+  <tr><td>5</td><td>GND</td>    <td>---</td><td></td></tr>
+
+</table>
+
 
 
 
