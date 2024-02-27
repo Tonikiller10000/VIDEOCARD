@@ -10,11 +10,11 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
 
 
 ### Pinout
-1 RED
-2 GREEN
-3 BLUE
-4 RES
-5 GND
+1. RED
+2. GREEN
+3. BLUE
+4. RES
+5. GND
 
 
 
