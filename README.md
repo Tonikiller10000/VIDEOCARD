@@ -32,13 +32,9 @@ Next, I wanted to make the modulse separated Hsync and Vsync [modules](https://g
 and when I realised wasn\`t a very good idea, and I combined the screen sync parts on one [board](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/s2.jpg) witch needed to be [double sided](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.7/t2.jpg) and very lartge to place the vias(this was the largest size). 
 
 ### version 0.6
-<table>
-  <tr>
-    <td>So I dont entierly copy the design, I wantd to try making the latches with ne555 instead of NAND gates. Unfortunatly, I found out that the ne555 is not fast enouch for 10MHz and I switched back to the original design. </td>
-    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/ss.jpg " height = 400 ></td>
-  </tr>
-</table>
+<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/ss.jpg " height = 400 >
 
+So I dont entierly copy the design, I wantd to try making the latches with ne555 instead of NAND gates. Unfortunatly, I found out that the ne555 is not fast enouch for 10MHz and I switched back to the original design. 
 
 ### Version 1.0
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V1.0/t2.jpg" height = 400 >
