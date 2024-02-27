@@ -27,24 +27,15 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
 
 
 ## History
-After seing the Ben Eater Videocard series and some other videos about computers and how they work, I wanted to make a video card of my own, and I started building the <b> SCREEN SYNC</b>. Because of my limmited resources, I started making the parts of the videocard separatly. So I started making the 12 bit binnary counter on the breadboard ([video](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/ard_clk.mp4)) and after that, I made it on the [PCB](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t1.jpeg) at home. I used pins as vias, witch was very ugly but it worked [face](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t3.jpeg), [Back](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t2.jpeg)
+After seing the Ben Eater Videocard series and some other videos about computers and how they work, I wanted to make a video card of my own, and I started building the <b> SCREEN SYNC</b>. Because of my limmited resources, I started making the parts of the videocard separatly. So I started making the 12 bit binnary counter on the breadboard ([video](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/ard_clk.mp4)) and after that, I made it on the [PCB](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t1.jpeg) at home. I used pins as vias, witch was very ugly but it worked ([face](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t3.jpeg), [Back](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t2.jpeg))
+Next, I wanted to make the modulse separated Hsync and Vsync [modules](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.3/t1.jpg), 
+and when I realised wasn\`t a very good idea, and I combined the screen sync parts on one [board](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/s2.jpg) witch needed to be double sided and very lartge to place the vias(this was the largest size). 
 
 <table>
   <tr>
-    <td>
-    Next, I wanted to make the modulse separated Hsync and Vsync [modules](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.3/t1.jpg), 
-    witch I realised wasn\`t a very good idea, and I combined all the screen sync on one [board](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/s2.jpg). </td>
     <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/s3.jpg"></td>
     <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/s1.jpg"></td>
-  </tr>
-</table>
-
-Than I tried a larger board to place the vias... 
-<table>
-  <tr>
     <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.7/t2.jpg"></td>
-    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.7/t3.jpg"></td>
-    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.7/t4.jpg"></td>
   </tr>
 </table>
 
