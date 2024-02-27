@@ -11,20 +11,24 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
 
 
 ### Pinout
-1. RED
-2. GREEN
-3. BLUE
-4. RES
-5. GND
 
 <table>
-  <tr><td>Pin number</td><td>Name</td><td>Dir</td><td>Description</td></tr>
-  <tr><td>1</td><td>RED</td>    <td>--></td><td>Red Video(75 ohm, 0.7V)</td></tr>
-  <tr><td>2</td><td>GREEN</td>  <td>--></td><td></td></tr>
-  <tr><td>3</td><td>BLUE</td>   <td>--></td><td></td></tr>
-  <tr><td>4</td><td>RES</td>    <td>   </td><td></td></tr>
-  <tr><td>5</td><td>GND</td>    <td>---</td><td></td></tr>
-
+  <tr><td>Pin number</td>   <td>Name</td>   <td>Dir</td>    <td>Description</td></tr>
+  <tr><td>1</td>            <td>RED</td>    <td>--></td>    <td>Red Video(75 ohm, 0.7V)</td></tr>
+  <tr><td>2</td>            <td>GREEN</td>  <td>--></td>    <td>Green Video(75 ohm, 0.7V)</td><tr>
+  <tr><td>3</td>            <td>BLUE</td>   <td>--></td>    <td>Blue Video(75 ohm, 0.7V)</td></tr>
+  <tr><td>4</td>            <td>RES</td>    <td>   </td>    <td>Reserved</td></tr>
+  <tr><td>5</td>            <td>GND</td>    <td>---</td>    <td>Ground</td></tr>
+  <tr><td>6</td>            <td>RGND</td>   <td>---</td>    <td>Red Ground</td></tr>
+  <tr><td>7</td>            <td>GGND</td>   <td>---</td>    <td>Green Ground</td></tr>
+  <tr><td>8</td>            <td>BGND</td>   <td>---</td>    <td>Blue Ground</td></tr>
+  <tr><td>9</td>            <td>+5V</td>    <td>--></td>    <td>+5 VDC</td></tr>
+  <tr><td>10</td>           <td>SGND</td>   <td>---</td>    <td>Sync Ground</td></tr>
+  <tr><td>11</td>           <td>ID0</td>    <td><--</td>    <td>Monitor ID Bit 0 (optional)</td></tr>
+  <tr><td>12</td>           <td>SDA</td>    <td><-></td>    <td>DDC Serial Data Line</td></tr>
+  <tr><td>13</td>  <td>HSYNC or CSYNC</td>  <td>--></td>    <td>Horizontal Sync (or Composite Sync)</td></tr>
+  <tr><td>14</td>           <td>VSYNC</td>  <td>--></td>    <td>Vertical Sync</td></tr>
+  <tr><td>15</td>           <td>SCL</td>    <td><-></td>    <td>DDC Data Clock Line</td></tr>
 </table>
 
 
