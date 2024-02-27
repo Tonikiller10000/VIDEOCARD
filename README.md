@@ -32,26 +32,30 @@ Next, I wanted to make the modulse separated Hsync and Vsync [modules](https://g
 and when I realised wasn\`t a very good idea, and I combined the screen sync parts on one [board](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/s2.jpg) witch needed to be [double sided](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.7/t2.jpg) and very lartge to place the vias(this was the largest size). 
 
 ### version 0.6
-<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/ss.jpg " height = 400 >
+<table>
+  <tr>
+    <td>So I dont entierly copy the design, I wantd to try making the latches with ne555 instead of NAND gates. Unfortunatly, I found out that the ne555 is not fast enouch for 10MHz and I switched back to the original design. </td>
+    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/ss.jpg " height = 400 ></td>
+  </tr>
+</table>
 
-So I dont entierly copy the design, I wantd to try making the latches with ne555 instead of NAND gates. Unfortunatly, I found out that the ne555 is not fast enouch for 10MHz and I switched back to the original design. Then because I couldn\`t place vias at home, I found about JLC pcb, and I made my first order:     
 
 ### Version 1.0
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V1.0/t2.jpg" height = 400 >
-For this order, I needed to change the software, and I found the open source software KICAD, witch I didn`t know at the time how to fully use with the DRC and stuff, 
-Because I didn`t know the final design I wanted, I staied few months to work at it, and because I was tired and bored of it, I ordered fast without checking it carefully.
+
+Because I couldn\`t place vias at home, I found about JLC pcb, and I made my first order.    
+For this order, I needed to change the software I was working with and I found the open source software KICAD, witch I didn`t know at the time how to fully use with the DRC and other stuff. 
+I staied few months to work at it not knowing the wanted final design, and because I was tired and bored of it, I ordered fast without checking it carefully.
 When testing, it didn\`t work and after few weeks f break, I saw that the bus was wired again and I ordered it again with a new pin design and a very carefully check.
 
 ### Version 2.0
-After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/try.png) design considerations, the board was working.
+After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/try.png) design considerations, the [board](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r8.png) was working.
 
 <table>
   <tr>
     <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/p.png"></td>
-    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r4.jpg"></td>
     <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r5.jpg"></td>
     <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r7.png"></td>
-    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r8.png"></td>
   </tr>
 </table>
 
@@ -67,7 +71,6 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/res.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/rez.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/rez2.png">
-<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/rezz.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/screen.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/vvv.png">
 
@@ -75,7 +78,7 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
 
 
 
-
+After fully assembly and testing of the board, I wanted to use 2 monitors simultanely, But unfortunately, the ports are [too close too each other](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r4.jpg).
 
 
 
