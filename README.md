@@ -17,11 +17,11 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
 4. RES
 5. GND
 
-| :---      |   :---   | 
-| Pin Number    | Pin Name | 
-| 1 | RED   | 
-| 2 | GREEN | 
-| 3 | BLUE  | 
+| :---      |   :---    | 
+| Pin Number| Pin Name  | 
+| 1         | RED       | 
+| 2         | GREEN     | 
+| 3         | BLUE      | 
 
 
 
