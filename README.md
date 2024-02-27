@@ -63,6 +63,37 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
 
 
 
+## Screen SYNC Pinout
+- H0-H7: OUTPUT  indicate the pixel position on the line (H7 MSB)
+- V0-V7: OUTPUT  indicate the row position on the screen (V7 MSB)
+- VCC: 5V POWER INPUT 
+- GND: 0V POWER INPUT
+- CLK: OUTPUT
+
+
+iesire a impulsurilor cristalului de pe placa dacă exista, sau o intrare pentru un oscilator extern
+(recomandat este un oscilator cat mai aproape de placa sau chiar pe ea pentru a reduce
+interferențele și intarzierile de semnal)
+CLK4: intrare folosită pentru oscilatoarele puse pe placa și la care care pinul 4 are funcția de enable
+VGA1BLUE: intrare analog (0V-0.7V) pentru intensitatea luminii de culoare albastra la pixelul curent
+pe monitorul conectat la portul vga numărul 1.
+VGA1GREEN: intrare analog (0V-0.7V) pentru intensitatea luminii de culoare verde la pixelul curent
+pe monitorul conectat la portul vga numărul 1.
+VGA1RED: intrare analog (0V-0.7V) pentru intensitatea luminii de culoare roșie la pixelul curent pe
+monitorul conectat la portul vga numărul 1.
+VGA2BLUE: intrare analog (0V-0.7V) pentru intensitatea luminii de culoare albastra la pixelul curent
+pe monitorul conectat la portul vga numărul 2.
+VGA2GREEN:intrare analog (0V-0.7V) pentru intensitatea luminii de culoare verde la pixelul curent pe
+monitorul conectat la portul vga numărul 2.
+VGA2RED: intrare analog (0V-0.7V) pentru intensitatea luminii de culoare roșie la pixelul curent pe
+monitorul conectat la portul vga numărul 2.
+HBLANK: ieșire ce indica dacă pixelul curent se afla în partea afisabila a randului
+VBLANK: ieșire ce indica dacă randul curent se afla în partea afisabila a ecranului
+
+
+
+
+
 ## History
 After seing the Ben Eater Videocard series and some other videos about computers and how they work, I wanted to make a video card of my own, and I started building the <b> SCREEN SYNC</b>. Because of my limmited resources, I started making the parts of the videocard separatly. So I started making the 12 bit binnary counter on the breadboard ([video](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/ard_clk.mp4)) and after that, I made it on the [PCB](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t1.jpeg) at home. I used pins as vias, witch was very ugly but it worked ([face](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t3.jpeg), [Back](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t2.jpeg))
 Next, I wanted to make the modulse separated Hsync and Vsync [modules](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.3/t1.jpg), 
