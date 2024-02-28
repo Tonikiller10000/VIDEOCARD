@@ -5,12 +5,18 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
 
 
 
+## How VGA works
+The vga screen works by reciving analog signals at specific pixel position to set the separate color intensity of the red,green and blue collors at that pixel. 
+Also, to set the screen resolution and speed, 2 aditional SYNC signals are sented at very precise time intervals.
 
 
 
-## SVGA Signal 800x600 @ 60Hz timing
+To select the VGA screen resolution and speed, you need to chose one [VGA mode](http://tinyvga.com/vga-timing), and sent the specific signals at the rigth time.
+Because of the convenience, I also used the 800x600 px resolution at 60Hz witch uses a 40 MHz pixel frequency. By looking on the timing chart, it\`s seems that the timing can be devided by 4 witch will result in a pixel size of 4 actual pixels on a row at a resolution of 200x600 px but with a clk speed of 10MHz. For the beauty of it, by writing the same pixels collors every 4 rows, the screen can display 200x150 px resolution with a pixel beeing actually 4x4 px. 
 
-### General timing
+### SVGA Signal 800x600 @ 60Hz timing
+
+#### General timing
 <table>
   <tr><td>Screen refresh rate   </td><td>60 Hz</td></tr>      
   <tr><td>Vertical refresh      </td><td>37.878787878788 kHz</td></tr>  
@@ -18,7 +24,7 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
   <tr><td>Used Pixel freq.      </td><td>10.0 MHz</td></tr>   
 </table>
 
-### Horizontal timing (line)
+#### Horizontal timing (line)
 <table>
   <tr><td>Scanline part</td> <td>Pixels</td> <td>Time [us]</td> <td>Used Pixels</td> <td>Reached Pixel</td> <td>Binnary</td>    </tr>
   <tr><td>Visible area</td>  <td>800</td>    <td>20</td>        <td>200</td>         <td>200</td>           <td>0 1100 1000</td></tr>
@@ -28,7 +34,7 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
   <tr><td>Whole line</td>    <td>1056</td>   <td>26.4</td>      <td>264</td>         <td>   </td>           <td></td>           </tr>
 </table>
 
-### Vertical timing (frame)
+#### Vertical timing (frame)
 <table>
   <tr><td>Frame part</td>   <td>Lines</td> <td>Time [us]</td> <td>Used Lines</td> <td>Reached Line</td> <td>Binnary</td>      </tr>
   <tr><td>Visible area</td> <td>600</td>   <td>15.84</td>     <td>600</td>        <td>600</td>          <td>10 0101 1000</td> </tr>
@@ -37,6 +43,7 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
   <tr><td>Back porch</td>   <td>23</td>    <td>0.6072</td>    <td>23</td>         <td>628</td>          <td>10 0111 0100</td> </tr>
   <tr><td>Whole frame</td>  <td>628</td>   <td>16.5792</td>   <td>628</td>        <td>   </td>          <td></td>             </tr>
 </table>
+<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/screen.png">
 
 
 
@@ -68,7 +75,7 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
   <tr><td>15</td>           <td>SCL</td>    <td><-></td>    <td>DDC Data Clock Line</td></tr>
 </table>
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/port.png">
-
+Learn more about [VGA pins](https://pinoutguide.com/Video/VGA15_pinout.shtml)
 
 
 ## Screen SYNC Pinout
@@ -96,20 +103,20 @@ After seing the Ben Eater Videocard series and some other videos about computers
 Next, I wanted to make the modulse separated Hsync and Vsync [modules](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.3/t1.jpg), 
 and when I realised wasn\`t a very good idea, and I combined the screen sync parts on one [board](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/s2.jpg) witch needed to be [double sided](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.7/t2.jpg) and very lartge to place the vias(this was the largest size). 
 
-### version 0.6
+#### version 0.6
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/ss.jpg " height = 400 >
 
 So I dont entierly copy the design, I wantd to try making the latches with ne555 instead of NAND gates. Unfortunatly, I found out that the ne555 is not fast enouch for 10MHz and I switched back to the original design. 
 
-### Version 1.0
+#### Version 1.0
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V1.0/t2.jpg" height = 400 >
 
-Because I couldn\`t place vias at home, I found about JLC pcb, and I made my first order.    
+Because I couldn\`t place vias at home, I found about [JLC pcb](https://jlcpcb.com/), and I made my first order.    
 For this order, I needed to change the software I was working with and I found the open source software KICAD, witch I didn`t know at the time how to fully use with the DRC and other stuff. 
 I staied few months to work at it not knowing the wanted final design, and because I was tired and bored of it, I ordered fast without checking it carefully.
 When testing, it didn\`t work and after few weeks f break, I saw that the bus was wired again and I ordered it again with a new pin design and a very carefully check.
 
-### Version 2.0
+#### Version 2.0
 After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/try.png) design considerations, the [board](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r8.png) was working.
 
 <table>
@@ -120,7 +127,7 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
   </tr>
 </table>
 
-### Schematic
+#### Schematic
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/s1.png">
 
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/8clo.png">
@@ -128,7 +135,6 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/e1.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/e2.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/rez.png">
-<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/screen.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/vvv.png">
 
 
@@ -145,8 +151,19 @@ After fully assembly and testing of the board, I wanted to use 2 monitors simult
 - turn the power of the shield down;
 
 
-## Links:
-74HC595 datasheet (shift register): https://datasheetspdf.com/pdf-file/446162/ONSemiconductor/74HC595/1
 
+
+
+## Datasheets:
+74LS00 (NAND gate):https://pdf1.alldatasheet.com/datasheet-pdf/view/51021/FAIRCHILD/74LS00.html
+74LS04 (Inverter):https://pdf1.alldatasheet.com/datasheet-pdf/view/5638/MOTOROLA/74LS04.html
+74LS30 (8 bit NAND gate):https://pdf1.alldatasheet.com/datasheet-pdf/view/12613/ONSEMI/74LS30.html
+74LS161 (binnary counter):https://pdf1.alldatasheet.com/datasheet-pdf/view/5675/MOTOROLA/74LS161.html
+
+## External Links:
+VGA pins: https://pinoutguide.com/Video/VGA15_pinout.shtml
+VGS resolutions: http://tinyvga.com/vga-timing
+BenEater YouTube: https://www.youtube.com/beneater
+BenEater WebSite: https://eater.net/vga
 
 
