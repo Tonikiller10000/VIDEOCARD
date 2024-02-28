@@ -20,15 +20,23 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
 
 ### Horizontal timing (line)
 <table>
-  <tr><td>Scanline part</td> <td>Pixels</td> <td>Time [us]</td> <td>Used Pixels</td> <td>Reached Pixel</td> <td>Binnary</td> </tr>
-  <tr><td>Visible area</td>  <td>800</td>    <td>20</td>        <td>200</td> <td>200</td>  <td>0 1100 1000</td> </tr>
-  <tr><td>Front porch</td>   <td>40</td>     <td>1</td>         <td>10</td>  <td>210</td>  <td>0 1101 0010</td> </tr>
-  <tr><td>Sync pulse</td>    <td>128</td>    <td>3.2</td>       <td>32</td>  <td>242</td>  <td>0 1111 0010</td> </tr>
-  <tr><td>Back porch</td>    <td>88</td>     <td>2.2</td>       <td>22</td>  <td>264</td>  <td>1 0000 1000</td> </tr>
-  <tr><td>Whole line</td>    <td>1056</td>   <td>26.4</td>      <td>264</td> <td>   </td>  <td></td> </tr>
+  <tr><td>Scanline part</td> <td>Pixels</td> <td>Time [us]</td> <td>Used Pixels</td> <td>Reached Pixel</td> <td>Binnary</td>    </tr>
+  <tr><td>Visible area</td>  <td>800</td>    <td>20</td>        <td>200</td>         <td>200</td>           <td>0 1100 1000</td></tr>
+  <tr><td>Front porch</td>   <td>40</td>     <td>1</td>         <td>10</td>          <td>210</td>           <td>0 1101 0010</td></tr>
+  <tr><td>Sync pulse</td>    <td>128</td>    <td>3.2</td>       <td>32</td>          <td>242</td>           <td>0 1111 0010</td></tr>
+  <tr><td>Back porch</td>    <td>88</td>     <td>2.2</td>       <td>22</td>          <td>264</td>           <td>1 0000 1000</td></tr>
+  <tr><td>Whole line</td>    <td>1056</td>   <td>26.4</td>      <td>264</td>         <td>   </td>           <td></td>           </tr>
 </table>
 
-
+### Vertical timing (frame)
+<table>
+  <tr><td>Frame part</td>   <td>Lines</td> <td>Time [us]</td> <td>Used Lines</td> <td>Reached Line</td> <td>Binnary</td>      </tr>
+  <tr><td>Visible area</td> <td>600</td>   <td>15.84</td>     <td>600</td>        <td>600</td>          <td>10 0101 1000</td> </tr>
+  <tr><td>Front porch</td>  <td>1</td>     <td>0.0264</td>    <td>1</td>          <td>601</td>          <td>10 0101 1001</td> </tr>
+  <tr><td>Sync pulse</td>   <td>4</td>     <td>0.1056</td>    <td>4</td>          <td>605</td>          <td>10 0101 1101</td> </tr>
+  <tr><td>Back porch</td>   <td>23</td>    <td>0.6072</td>    <td>23</td>         <td>628</td>          <td>10 0111 0100</td> </tr>
+  <tr><td>Whole frame</td>  <td>628</td>   <td>16.5792</td>   <td>628</td>        <td>   </td>          <td></td>             </tr>
+</table>
 
 
 
@@ -59,7 +67,7 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
   <tr><td>14</td>           <td>VSYNC</td>  <td>--></td>    <td>Vertical Sync</td></tr>
   <tr><td>15</td>           <td>SCL</td>    <td><-></td>    <td>DDC Data Clock Line</td></tr>
 </table>
-
+<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/port.png">
 
 
 
@@ -68,27 +76,16 @@ This is an videocard made for my [8 bit computer]() witch I still work on.
 - V0-V7: OUTPUT  indicate the row position on the screen (V7 MSB)
 - VCC: 5V POWER INPUT 
 - GND: 0V POWER INPUT
-- CLK: OUTPUT
-
-
-iesire a impulsurilor cristalului de pe placa dacă exista, sau o intrare pentru un oscilator extern
-(recomandat este un oscilator cat mai aproape de placa sau chiar pe ea pentru a reduce
-interferențele și intarzierile de semnal)
-CLK4: intrare folosită pentru oscilatoarele puse pe placa și la care care pinul 4 are funcția de enable
-VGA1BLUE: intrare analog (0V-0.7V) pentru intensitatea luminii de culoare albastra la pixelul curent
-pe monitorul conectat la portul vga numărul 1.
-VGA1GREEN: intrare analog (0V-0.7V) pentru intensitatea luminii de culoare verde la pixelul curent
-pe monitorul conectat la portul vga numărul 1.
-VGA1RED: intrare analog (0V-0.7V) pentru intensitatea luminii de culoare roșie la pixelul curent pe
-monitorul conectat la portul vga numărul 1.
-VGA2BLUE: intrare analog (0V-0.7V) pentru intensitatea luminii de culoare albastra la pixelul curent
-pe monitorul conectat la portul vga numărul 2.
-VGA2GREEN:intrare analog (0V-0.7V) pentru intensitatea luminii de culoare verde la pixelul curent pe
-monitorul conectat la portul vga numărul 2.
-VGA2RED: intrare analog (0V-0.7V) pentru intensitatea luminii de culoare roșie la pixelul curent pe
-monitorul conectat la portul vga numărul 2.
-HBLANK: ieșire ce indica dacă pixelul curent se afla în partea afisabila a randului
-VBLANK: ieșire ce indica dacă randul curent se afla în partea afisabila a ecranului
+- CLK: INPUT/OUTPUT   output cristal output if placed (recomanded) or crystal input if not 
+- CLK4: INPUT         for cristals with enable pin
+- VGA1BLUE: ANALOG INPUT (0V-0.7V)   blue ligth intensity of the current pixel on VGA1 monitor
+- VGA1GREEN: ANALOG INPUT (0V-0.7V)   green ligth intensity of the current pixel on VGA1 monitor
+- VGA1RED: ANALOG INPUT (0V-0.7V)   red ligth intensity of the current pixel on VGA1 monitor
+- VGA2BLUE: ANALOG INPUT (0V-0.7V)   blue ligth intensity of the current pixel on VGA2 monitor
+- VGA2GREEN: ANALOG INPUT (0V-0.7V)   green ligth intensity of the current pixel on VGA2 monitor
+- VGA2RED: ANALOG INPUT (0V-0.7V)   red ligth intensity of the current pixel on VGA2 monitor
+- HBLANK: OUTPUT LOW if the drawn pixel is in the displayable area of the row
+- VBLANK: OUTPUT LOW if the drawn row is in the displayable area of the screen
 
 
 
@@ -130,10 +127,7 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/bird.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/e1.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/e2.png">
-<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/port.png">
-<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/res.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/rez.png">
-<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/rez2.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/screen.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/vvv.png">
 
