@@ -8,6 +8,17 @@ The vga screen works by reciving analog signals between 0 and 0.7V for every col
 Also, to set the screen resolution and speed, 2 aditional SYNC signals are sented at very precise time intervals at the end of every line(HSYNC) and every screen(VSYNC) in witch time, no collor is sent/displayed
 
 
+
+<details>
+<summary></summary>
+<table>
+  gfhgfhgfhgf
+  jhjghjgh<br>dsfdsfdsf
+</table>
+</details>
+
+
+
 To select the VGA screen resolution and speed, you need to chose one [VGA mode](http://tinyvga.com/vga-timing), and sent the specific signals at the rigth time.
 Because of the convenience, I also used the 800x600 px resolution at 60Hz witch uses a 40 MHz pixel frequency. By looking on the timing chart, it\`s seems that the timing can be devided by 4 witch will result in a pixel size of 4 actual pixels on a row at a resolution of 200x600 px but with a clk speed of 10MHz. For the beauty of it, by writing the same pixels collors every 4 rows, the screen can display 200x150 px resolution with a pixel beeing actually 4x4 px. 
 
@@ -55,26 +66,6 @@ Because of the convenience, I also used the 800x600 px resolution at 60Hz witch 
 ### aplication 
 The videocard has 2x 12bit binnary counter, each made of 3x 4bit binnary counter(74LS161), witch count the displayable row and pixel on that row. The counted value is modified with some inverters(74LS04) at specified bits and outputed to some 8 inputs NAND gates(74LS30) to detect when the counter arrived at some specified numbers. The NAND gates set and reset 4 latches made with other type of NAND gates(74LS00), whose outputs indicate the HSYNC, VSYNC, VBLANK and HBLANK. The SYNC signals are dirrectly sent to the VGA port pins, and the BLANK signals indicate when to sent the collor values and when not to.
 
-<details>
-<summary><b>Screen SYNC Pinout</b></summary>
-<table>
-  <tr><td>Pins</td>       <td>Type</td>                     <td>Description</td></tr>
-  <tr><td>H0-H7</td>      <td>OUTPUT</td>                   <td>indicate the pixel position on the line (H7 MSB)</td> </tr>
-  <tr><td>V0-V7</td>      <td>OUTPUT</td>                   <td>indicate the row position on the screen (V7 MSB)</td> </tr>
-  <tr><td>VCC</td>        <td>POWER INPUT</td>              <td>5V POWER INPUT </td> </tr>
-  <tr><td>GND</td>        <td>POWER INPUT</td>              <td>0V POWER INPUT </td> </tr>
-  <tr><td>CLK</td>        <td>INPUT/OUTPUT</td>             <td>output cristal output if placed (recomanded) or crystal input if not</td>  </tr> 
-  <tr><td>CLK4</td>       <td>INPUT</td>                    <td>for cristals with enable pin</td>  </tr>
-  <tr><td>VGA1BLUE</td>   <td>ANALOG INPUT (0V-0.7V)</td>  <td> blue ligth intensity of the current pixel on VGA1 monitor</td>  </tr>
-  <tr><td>VGA1GREEN</td>  <td>ANALOG INPUT (0V-0.7V)</td>  <td> green ligth intensity of the current pixel on VGA1 monitor</td>  </tr>
-  <tr><td>VGA1RED</td>    <td>ANALOG INPUT (0V-0.7V)</td>  <td> red ligth intensity of the current pixel on VGA1 monitor</td>  </tr>
-  <tr><td>VGA2BLUE</td>   <td>ANALOG INPUT (0V-0.7V)</td>  <td> blue ligth intensity of the current pixel on VGA2 monitor</td>  </tr>
-  <tr><td>VGA2GREEN</td>  <td>ANALOG INPUT (0V-0.7V)</td>  <td> green ligth intensity of the current pixel on VGA2 monitor</td>  </tr>
-  <tr><td>VGA2RED</td>    <td>ANALOG INPUT (0V-0.7V)</td>  <td> red ligth intensity of the current pixel on VGA2 monitor</td>  </tr>
-  <tr><td>HBLANK</td>   <td>OUTPUT</td>                   <td>LOW if the drawn pixel is in the displayable area of the row</td> </tr>
-  <tr><td>VBLANK</td>   <td>OUTPUT</td>                   <td>LOW if the drawn row is in the displayable area of the screen</td> </tr>
-</table>
-</details>
 
 
 ## VGA Port Pinout
@@ -102,7 +93,7 @@ The videocard has 2x 12bit binnary counter, each made of 3x 4bit binnary counter
 
 
 
-## History
+## History:
 After seing the Ben Eater Videocard series and some other videos about computers and how they work, I wanted to make a video card of my own, and I started building the <b> SCREEN SYNC</b>. Because of my limmited resources, I started making the parts of the videocard separatly. So I started making the 12 bit binnary counter on the breadboard ([video](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/ard_clk.mp4)) and after that, I made it on the [PCB](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t1.jpeg) at home. I used pins as vias, witch was very ugly but it worked ([face](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t3.jpeg), [Back](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t2.jpeg))
 Next, I wanted to make the modulse separated Hsync and Vsync [modules](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.3/t1.jpg), 
 and when I realised wasn\`t a very good idea, and I combined the screen sync parts on one [board](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/s2.jpg) witch needed to be [double sided](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.7/t2.jpg) and very lartge to place the vias(this was the largest size). 
@@ -131,7 +122,7 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
   </tr>
 </table>
 
-#### Schematic
+#### Schematic:
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/s1.png">
 
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/8clo.png">
@@ -144,16 +135,45 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
 
 
 ## How to use:
+<details>
+<summary><b>Screen SYNC Pinout</b></summary>
+<table>
+  <tr><td>Pins</td>       <td>Type</td>                     <td>Description</td></tr>
+  <tr><td>H0-H7</td>      <td>OUTPUT</td>                   <td>indicate the pixel position on the line (H7 MSB)</td> </tr>
+  <tr><td>V0-V7</td>      <td>OUTPUT</td>                   <td>indicate the row position on the screen (V7 MSB)</td> </tr>
+  <tr><td>VCC</td>        <td>POWER INPUT</td>              <td>5V POWER INPUT </td> </tr>
+  <tr><td>GND</td>        <td>POWER INPUT</td>              <td>0V POWER INPUT </td> </tr>
+  <tr><td>CLK</td>        <td>INPUT/OUTPUT</td>             <td>output cristal output if placed (recomanded) or crystal input if not</td>  </tr> 
+  <tr><td>CLK4</td>       <td>INPUT</td>                    <td>for cristals with enable pin</td>  </tr>
+  <tr><td>VGA1BLUE</td>   <td>ANALOG INPUT (0V-0.7V)</td>  <td> blue ligth intensity of the current pixel on VGA1 monitor</td>  </tr>
+  <tr><td>VGA1GREEN</td>  <td>ANALOG INPUT (0V-0.7V)</td>  <td> green ligth intensity of the current pixel on VGA1 monitor</td>  </tr>
+  <tr><td>VGA1RED</td>    <td>ANALOG INPUT (0V-0.7V)</td>  <td> red ligth intensity of the current pixel on VGA1 monitor</td>  </tr>
+  <tr><td>VGA2BLUE</td>   <td>ANALOG INPUT (0V-0.7V)</td>  <td> blue ligth intensity of the current pixel on VGA2 monitor</td>  </tr>
+  <tr><td>VGA2GREEN</td>  <td>ANALOG INPUT (0V-0.7V)</td>  <td> green ligth intensity of the current pixel on VGA2 monitor</td>  </tr>
+  <tr><td>VGA2RED</td>    <td>ANALOG INPUT (0V-0.7V)</td>  <td> red ligth intensity of the current pixel on VGA2 monitor</td>  </tr>
+  <tr><td>HBLANK</td>     <td>OUTPUT</td>                   <td>LOW if the drawn pixel is in the displayable area of the row</td> </tr>
+  <tr><td>VBLANK</td>     <td>OUTPUT</td>                   <td>LOW if the drawn row is in the displayable area of the screen</td> </tr>
+</table>
+</details>
+
 - power the board to 5V
 - connect the VGA port to the monitor
-- ### connecting it to memory:
+- tie the HBLANK and VBLANK signals to a NAND gate (74LS00) to make the BLANK signal (active HIGH)
+- send analog voltages(0V-0.7V) to the analog color pins  
+
+<details>
+<summary><b>connecting it to memory</b></summary>
 When connected to the 32K EEPROM(AT24C256), the data pins will have each 2 an 680 ohm and an 1.5 Kohm resistors to make 4 voltage points between 0V and 0.7V
 Because of the HIGH display speed, it is possible the aparition of some artifacts on the screen.
 To save a picture in the memory, the picture dimmension is reduced to 100x75px, the number of collors and shades is reduced (4 red shades x 4 green shades x 4 blue shades = 64 collor shades) and the picture binnary file is moddified and copied to the EEPROM. Also the enable pin must be LOW to display the picture, and HIGH when the SYNC signals are sent. The HBLANK and VBLANK signals are outputed in a NAND gate (74LS00) witch make the BLANK signal active HIGH, and for the EEPROM it is inverted again by passing again trouth the gate with both inputs tied together.
+</details>
 
 
 
-## Conclusion
+
+
+
+## Conclusion:
 The board is partially tested without being connected to the memory, because of the missing EEPROM programmer at the moment of testing
 I wanted to use 2 monitors simultanely, But unfortunately, the ports are [too close too each other](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r4.jpg).
 Now I will try to tie 3 RAM memory\`s(one for each collor) to make 255x255x255 color shades.
