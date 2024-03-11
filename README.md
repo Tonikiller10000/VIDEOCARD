@@ -72,10 +72,13 @@ Because of the convenience, I also used the 800x600 px resolution at 60Hz witch 
 
 <details>
 
-<summary>Tips for collapsed sections</summary>
+<summary>
 
+## VGA Port Pinout 1
 
-## VGA Port Pinout
+</summary>
+
+## VGA Port Pinout 2
 <table>
   <tr><td>Pin number</td>   <td>Name</td>   <td>Dir</td>    <td>Description</td></tr>
   <tr><td>1</td>            <td>RED</td>    <td>--></td>    <td>Red Video(75 ohm, 0.7V)</td></tr>
@@ -95,7 +98,7 @@ Because of the convenience, I also used the 800x600 px resolution at 60Hz witch 
   <tr><td>15</td>           <td>SCL</td>    <td><-></td>    <td>DDC Data Clock Line</td></tr>
 </table>
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/port.png">
-Learn more about [VGA pins](https://pinoutguide.com/Video/VGA15_pinout.shtml)
+<br>Learn more about [VGA pins](https://pinoutguide.com/Video/VGA15_pinout.shtml)
 
 
 
