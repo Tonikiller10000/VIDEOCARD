@@ -72,13 +72,8 @@ Because of the convenience, I also used the 800x600 px resolution at 60Hz witch 
 
 <details>
 
-<summary>
+<summary>## VGA Port Pinout</summary>
 
-## VGA Port Pinout 1
-
-</summary>
-
-## VGA Port Pinout 2
 <table>
   <tr><td>Pin number</td>   <td>Name</td>   <td>Dir</td>    <td>Description</td></tr>
   <tr><td>1</td>            <td>RED</td>    <td>--></td>    <td>Red Video(75 ohm, 0.7V)</td></tr>
@@ -100,8 +95,6 @@ Because of the convenience, I also used the 800x600 px resolution at 60Hz witch 
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/port.png">
 <br>Learn more about [VGA pins](https://pinoutguide.com/Video/VGA15_pinout.shtml)
 
-
-
 </details>
 
 
@@ -114,22 +107,19 @@ Because of the convenience, I also used the 800x600 px resolution at 60Hz witch 
 
 
 ## Screen SYNC Pinout
-- H0-H7: OUTPUT  indicate the pixel position on the line (H7 MSB)
-- V0-V7: OUTPUT  indicate the row position on the screen (V7 MSB)
-- VCC: 5V POWER INPUT 
-- GND: 0V POWER INPUT
-- CLK: INPUT/OUTPUT   output cristal output if placed (recomanded) or crystal input if not 
-- CLK4: INPUT         for cristals with enable pin
-- VGA1BLUE: ANALOG INPUT (0V-0.7V)   blue ligth intensity of the current pixel on VGA1 monitor
-- VGA1GREEN: ANALOG INPUT (0V-0.7V)   green ligth intensity of the current pixel on VGA1 monitor
-- VGA1RED: ANALOG INPUT (0V-0.7V)   red ligth intensity of the current pixel on VGA1 monitor
-- VGA2BLUE: ANALOG INPUT (0V-0.7V)   blue ligth intensity of the current pixel on VGA2 monitor
-- VGA2GREEN: ANALOG INPUT (0V-0.7V)   green ligth intensity of the current pixel on VGA2 monitor
-- VGA2RED: ANALOG INPUT (0V-0.7V)   red ligth intensity of the current pixel on VGA2 monitor
-- HBLANK: OUTPUT LOW if the drawn pixel is in the displayable area of the row
-- VBLANK: OUTPUT LOW if the drawn row is in the displayable area of the screen
 
-
+<table>
+  <tr><td>Pins</td>     <td>Type</td>           <td>Description</td></tr>
+  <tr><td>H0-H7</td>    <td>OUTPUT</td>         <td>indicate the pixel position on the line (H7 MSB)</td> </tr>
+  <tr><td>V0-V7</td>    <td>OUTPUT</td>         <td>indicate the row position on the screen (V7 MSB)</td> </tr>
+  <tr><td>VCC</td>      <td>POWER INPUT</td>    <td>5V POWER INPUT </td> </tr>
+  <tr><td>GND</td>      <td>POWER INPUT</td>    <td>0V POWER INPUT </td> </tr>
+  <tr><td>CLK</td>      <td>INPUT/OUTPUT</td>   <td>output cristal output if placed (recomanded) or crystal input if not</td>  </tr> 
+  <tr><td>CLK4</td>     <td>INPUT</td>          <td>for cristals with enable pin</td>  </tr>
+  <tr><td>VGAXYYY</td>  <td>ANALOG INPUT</td>   <td> YYY ligth intensity of the current pixel on VGA monitor X (Ex: VGA2BLUE = blue ligth on monitor 2)</td>  </tr>
+  <tr><td>HBLANK</td>   <td>OUTPUT</td>         <td>LOW if the drawn pixel is in the displayable area of the row</td> </tr>
+  <tr><td>VBLANK</td>   <td>OUTPUT</td>         <td>LOW if the drawn row is in the displayable area of the screen</td> </tr>
+</table>
 
 
 
