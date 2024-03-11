@@ -1,15 +1,34 @@
 # VIDEOCARD
 
 ## Description:
-This is an videocard made for my [8 bit computer]() witch I still work on. 
+This is an videocard made for my [8 bit computer]() witch I still work on. It should be able to display graphics, texts and pictures on all tipes of screens and diplays. 
 
 
 
 ## How VGA works
-The vga screen works by reciving analog signals at specific pixel position to set the separate color intensity of the red,green and blue collors at that pixel. 
-Also, to set the screen resolution and speed, 2 aditional SYNC signals are sented at very precise time intervals.
+The vga screen works by reciving analog signals between 0 and 0.7V for every collor at specific pixel position to set the separate color intensity of the red,green and blue collors at that pixel. 
+Also, to set the screen resolution and speed, 2 aditional SYNC signals are sented at very precise time intervals at the end of every line(HSYNC) and every screen(VSYNC) in witch time, no collor is sent/displayed
+<br><br>
+The videocard has 2x 12bit binnary counter, each made of 3x 4bit binnary counter(74LS161), witch count the displayable row and pixel on that row. The counted value is modified with some inverters(74LS04) at specified bits and outputed to some 8 inputs NAND gates(74LS30) to detect when the counter arrived at some specified numbers. The NAND gates set and reset 4 latches made with other type of NAND gates(74LS00), whose outputs indicate the HSYNC, VSYNC, VBLANK and HBLANK. The SYNC signals are dirrectly sent to the VGA port pins, and the BLANK signals indicate when to sent the collor values and when not to.
 
 
+
+
+
+## -----------
+
+Folosire:
+When connected to the 32K EEPROM(AT24C256), one address pin is connected to a switch, witch can select between 2  100x75px stored pictures. The data pins will have each 2 an 680 ohm and an 1.5 Kohm resistors to make 4 voltage points between 0V and 0.7V
+Because of the HIGH display speed, it is possible the aparition of some artifacts on the screen.
+To save a picture in the memory, the picture dimmension is reduced to 100x75px, the number of collors and shades is reduced (4 red shades x 4 green shades x 4 blue shades = 64 collor shades) and the picture binnary file is moddified and copied to the EEPROM. Also the enable pin must be LOW to display the picture, and HIGH when the SYNC signals are sent. The HBLANK and VBLANK signals are outputed in a NAND gate (74LS00) witch make the BLANK signal active HIGH, and for the EEPROM it is inverted again by passing again trouth the gate with both inputs tied together.
+
+The board is partially tested without being connected to the memory, because of the missing EEPROM programmer at the moment of testing
+Some pistures are from the Ben Eater\`s videocard. Now I will try to tie 3 RAM memory\`s(one for each collor) to make 255x255x255 color shades.
+
+
+
+
+----------- more
 
 To select the VGA screen resolution and speed, you need to chose one [VGA mode](http://tinyvga.com/vga-timing), and sent the specific signals at the rigth time.
 Because of the convenience, I also used the 800x600 px resolution at 60Hz witch uses a 40 MHz pixel frequency. By looking on the timing chart, it\`s seems that the timing can be devided by 4 witch will result in a pixel size of 4 actual pixels on a row at a resolution of 200x600 px but with a clk speed of 10MHz. For the beauty of it, by writing the same pixels collors every 4 rows, the screen can display 200x150 px resolution with a pixel beeing actually 4x4 px. 
@@ -51,8 +70,9 @@ Because of the convenience, I also used the 800x600 px resolution at 60Hz witch 
 
 
 
+<details>
 
-
+<summary>Tips for collapsed sections</summary>
 
 
 ## VGA Port Pinout
@@ -76,6 +96,18 @@ Because of the convenience, I also used the 800x600 px resolution at 60Hz witch 
 </table>
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/port.png">
 Learn more about [VGA pins](https://pinoutguide.com/Video/VGA15_pinout.shtml)
+
+
+
+</details>
+
+
+
+
+
+
+
+
 
 
 ## Screen SYNC Pinout
@@ -153,17 +185,15 @@ After fully assembly and testing of the board, I wanted to use 2 monitors simult
 
 
 
-
 ## Datasheets:
-74LS00 (NAND gate):https://pdf1.alldatasheet.com/datasheet-pdf/view/51021/FAIRCHILD/74LS00.html
-74LS04 (Inverter):https://pdf1.alldatasheet.com/datasheet-pdf/view/5638/MOTOROLA/74LS04.html
-74LS30 (8 bit NAND gate):https://pdf1.alldatasheet.com/datasheet-pdf/view/12613/ONSEMI/74LS30.html
-74LS161 (binnary counter):https://pdf1.alldatasheet.com/datasheet-pdf/view/5675/MOTOROLA/74LS161.html
+- 74LS00 (NAND gate):https://pdf1.alldatasheet.com/datasheet-pdf/view/51021/FAIRCHILD/74LS00.html
+- 74LS04 (Inverter):https://pdf1.alldatasheet.com/datasheet-pdf/view/5638/MOTOROLA/74LS04.html
+- 74LS30 (8 bit NAND gate):https://pdf1.alldatasheet.com/datasheet-pdf/view/12613/ONSEMI/74LS30.html
+- 74LS161 (binnary counter):https://pdf1.alldatasheet.com/datasheet-pdf/view/5675/MOTOROLA/74LS161.html
 
 ## External Links:
-VGA pins: https://pinoutguide.com/Video/VGA15_pinout.shtml
-VGS resolutions: http://tinyvga.com/vga-timing
-BenEater YouTube: https://www.youtube.com/beneater
-BenEater WebSite: https://eater.net/vga
-
-
+- VGA pins: https://pinoutguide.com/Video/VGA15_pinout.shtml
+- VGA resolutions: http://tinyvga.com/vga-timing
+- BenEater YouTube: https://www.youtube.com/beneater
+- BenEater WebSite: https://eater.net/vga
+- JLC PCB: https://jlcpcb.com/ 
