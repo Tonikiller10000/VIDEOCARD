@@ -92,14 +92,20 @@ So I dont entierly copy the design, I wantd to try making the latches with ne555
 </details>
 
 <details> <summary><b> Version 1.0 </b></summary>
-<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V1.0/t2.jpg" height = 400 ><br>
-Because I couldn\`t place vias at home, I found about [JLC pcb](https://jlcpcb.com/), and I made my first order.    
+<table>
+  <tr>
+    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V1.0/t2.jpg" height = 400 ><br></td>
+    <td>Because I couldn\`t place vias at home, I found about [JLC pcb](https://jlcpcb.com/), and I made my first order.    
 For this order, I needed to change the software I was working with and I found the open source software KICAD, witch I didn`t know at the time how to fully use with the DRC and other stuff. 
 I staied few months to work at it not knowing the wanted final design, and because I was tired and bored of it, I ordered fast without checking it carefully.
-When testing, it didn\`t work and after few weeks f break, I saw that the bus was wired again and I ordered it again with a new pin design and a very carefully check.
+When testing, it didn\`t work and after few weeks f break, I saw that the bus was wired again and I ordered it again with a new pin design and a very carefully check.</td>
+  </tr>
+</table>
+
+
 </details>
 
-#### Version 2.0
+### Version 2.0
 After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/try.png) design considerations, the [board](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r8.png) was [working](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/rez.png).
 
 <table>
