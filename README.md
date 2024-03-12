@@ -80,28 +80,24 @@ The videocard has 2x 12bit binnary counter, each made of 3x 4bit binnary counter
 
 
 
-
-
-
-
-
 ## History:
 After seing the Ben Eater Videocard series and some other videos about computers and how they work, I wanted to make a video card of my own, and I started building the <b> SCREEN SYNC</b>. Because of my limmited resources, I started making the parts of the videocard separatly. So I started making the 12 bit binnary counter on the breadboard ([video](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/ard_clk.mp4)) and after that, I made it on the [PCB](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t1.jpeg) at home. I used pins as vias, witch was very ugly but it worked ([face](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t3.jpeg), [Back](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.2/t2.jpeg))
 Next, I wanted to make the modulse separated Hsync and Vsync [modules](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.3/t1.jpg), 
 and when I realised wasn\`t a very good idea, and I combined the screen sync parts on one [board](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/s2.jpg) witch needed to be [double sided](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.7/t2.jpg) and very lartge to place the vias(this was the largest size). 
 
-#### version 0.6
+<details> <summary><b> Version 0.6 </b></summary>
+<br>
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/ss.jpg " height = 400 >
-
 So I dont entierly copy the design, I wantd to try making the latches with ne555 instead of NAND gates. Unfortunatly, I found out that the ne555 is not fast enouch for 10MHz and I switched back to the original design. 
+</details>
 
-#### Version 1.0
+<details> <summary><b> Version 1.0 </b></summary>
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V1.0/t2.jpg" height = 400 >
-
 Because I couldn\`t place vias at home, I found about [JLC pcb](https://jlcpcb.com/), and I made my first order.    
 For this order, I needed to change the software I was working with and I found the open source software KICAD, witch I didn`t know at the time how to fully use with the DRC and other stuff. 
 I staied few months to work at it not knowing the wanted final design, and because I was tired and bored of it, I ordered fast without checking it carefully.
 When testing, it didn\`t work and after few weeks f break, I saw that the bus was wired again and I ordered it again with a new pin design and a very carefully check.
+</details>
 
 #### Version 2.0
 After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/try.png) design considerations, the [board](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r8.png) was [working](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/rez.png).
@@ -145,7 +141,6 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
 </details>
 
 <details> <summary><b>connecting it to memory</b></summary>
-
 When connected to the 32K EEPROM(AT24C256), the data pins will have each 2 an 680 ohm and an 1.5 Kohm resistors to make [4 voltage points between 0V and 0.7V](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/vvv.png).
 Because of the HIGH display speed, it is possible the aparition of some artifacts on the screen.
 To save a picture in the memory, the picture dimmension is reduced to 100x75px, the number of collors and shades is reduced(4 red shades x 4 green shades x 4 blue shades = 64 collor shades) and the picture binnary file is moddified and copied to the EEPROM. Also the enable pin must be LOW to display the picture, and HIGH when the SYNC signals are sent. The HBLANK and VBLANK signals are outputed in a NAND gate (74LS00) witch make the BLANK signal active HIGH, and for the EEPROM it is inverted again by passing again trouth the gate with both inputs tied together.<br> 
@@ -157,7 +152,6 @@ Also by connecting a processor, microcontroller or another [processing circuit](
   </tr>
 </table>
 </details>
-
 
 ## Conclusion:
 The board is partially tested without being connected to the memory, because of the missing EEPROM programmer at the moment of testing
