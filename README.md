@@ -9,15 +9,7 @@ Also, to set the screen resolution and speed, 2 aditional SYNC signals are sente
 
 
 
-<details>
-<summary></summary>
-<table>
-  gfhgfhgfhgf
-  jhjghjgh<br>dsfdsfdsf
-</table>
-</details>
-
-
+<details> <summary>How screen SYNC works</summary>
 
 To select the VGA screen resolution and speed, you need to chose one [VGA mode](http://tinyvga.com/vga-timing), and sent the specific signals at the rigth time.
 Because of the convenience, I also used the 800x600 px resolution at 60Hz witch uses a 40 MHz pixel frequency. By looking on the timing chart, it\`s seems that the timing can be devided by 4 witch will result in a pixel size of 4 actual pixels on a row at a resolution of 200x600 px but with a clk speed of 10MHz. For the beauty of it, by writing the same pixels collors every 4 rows, the screen can display 200x150 px resolution with a pixel beeing actually 4x4 px. 
@@ -51,7 +43,12 @@ Because of the convenience, I also used the 800x600 px resolution at 60Hz witch 
   <tr><td>Back porch</td>   <td>23</td>    <td>0.6072</td>    <td>23</td>         <td>628</td>          <td>10 0111 0100</td> </tr>
   <tr><td>Whole frame</td>  <td>628</td>   <td>16.5792</td>   <td>628</td>        <td>   </td>          <td></td>             </tr>
 </table>
+
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/screen.png">
+
+</details>
+
+
 
 
 
@@ -135,8 +132,12 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
 
 
 ## How to use:
-<details>
-<summary><b>Screen SYNC Pinout</b></summary>
+- power the board to 5V
+- connect the VGA port to the monitor
+- tie the HBLANK and VBLANK signals to a NAND gate (74LS00) to make the BLANK signal (active HIGH)
+- send analog voltages(0V-0.7V) to the analog color pins 
+
+<details> <summary><b>Screen SYNC Pinout</b></summary>
 <table>
   <tr><td>Pins</td>       <td>Type</td>                     <td>Description</td></tr>
   <tr><td>H0-H7</td>      <td>OUTPUT</td>                   <td>indicate the pixel position on the line (H7 MSB)</td> </tr>
@@ -156,21 +157,11 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
 </table>
 </details>
 
-- power the board to 5V
-- connect the VGA port to the monitor
-- tie the HBLANK and VBLANK signals to a NAND gate (74LS00) to make the BLANK signal (active HIGH)
-- send analog voltages(0V-0.7V) to the analog color pins  
-
-<details>
-<summary><b>connecting it to memory</b></summary>
+<details> <summary><b>connecting it to memory</b></summary>
 When connected to the 32K EEPROM(AT24C256), the data pins will have each 2 an 680 ohm and an 1.5 Kohm resistors to make 4 voltage points between 0V and 0.7V
 Because of the HIGH display speed, it is possible the aparition of some artifacts on the screen.
 To save a picture in the memory, the picture dimmension is reduced to 100x75px, the number of collors and shades is reduced (4 red shades x 4 green shades x 4 blue shades = 64 collor shades) and the picture binnary file is moddified and copied to the EEPROM. Also the enable pin must be LOW to display the picture, and HIGH when the SYNC signals are sent. The HBLANK and VBLANK signals are outputed in a NAND gate (74LS00) witch make the BLANK signal active HIGH, and for the EEPROM it is inverted again by passing again trouth the gate with both inputs tied together.
 </details>
-
-
-
-
 
 
 ## Conclusion:
