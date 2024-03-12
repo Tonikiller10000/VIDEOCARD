@@ -87,12 +87,12 @@ and when I realised wasn\`t a very good idea, and I combined the screen sync par
 
 <details> <summary><b> Version 0.6 </b></summary>
 <br>
-<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/ss.jpg " height = 400 >
+<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V0.6/ss.jpg " height = 400 ><br>
 So I dont entierly copy the design, I wantd to try making the latches with ne555 instead of NAND gates. Unfortunatly, I found out that the ne555 is not fast enouch for 10MHz and I switched back to the original design. 
 </details>
 
 <details> <summary><b> Version 1.0 </b></summary>
-<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V1.0/t2.jpg" height = 400 >
+<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V1.0/t2.jpg" height = 400 ><br>
 Because I couldn\`t place vias at home, I found about [JLC pcb](https://jlcpcb.com/), and I made my first order.    
 For this order, I needed to change the software I was working with and I found the open source software KICAD, witch I didn`t know at the time how to fully use with the DRC and other stuff. 
 I staied few months to work at it not knowing the wanted final design, and because I was tired and bored of it, I ordered fast without checking it carefully.
