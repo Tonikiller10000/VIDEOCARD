@@ -3,14 +3,35 @@
 ## Description:
 This is an videocard made for my [8 bit computer]() witch I still work on. It should be able to display graphics, texts and pictures on all tipes of screens and diplays. 
 
-## How VGA works
+## How VGA monitors works
 The vga screen works by reciving analog signals between 0 and 0.7V for every collor at specific pixel position to set the separate color intensity of the red,green and blue collors at that pixel. 
 Also, to set the screen resolution and speed, 2 aditional SYNC signals are sented at very precise time intervals at the end of every line(HSYNC) and every screen(VSYNC) in witch time, no collor is sent/displayed
 
+## VGA Port Pinout
+<table>
+  <tr><td>Pin number</td>   <td>Name</td>   <td>Dir</td>    <td>Description</td></tr>
+  <tr><td>1</td>            <td>RED</td>    <td>--></td>    <td>Red Video(75 ohm, 0.7V)</td></tr>
+  <tr><td>2</td>            <td>GREEN</td>  <td>--></td>    <td>Green Video(75 ohm, 0.7V)</td><tr>
+  <tr><td>3</td>            <td>BLUE</td>   <td>--></td>    <td>Blue Video(75 ohm, 0.7V)</td></tr>
+  <tr><td>4</td>            <td>RES</td>    <td>   </td>    <td>Reserved</td></tr>
+  <tr><td>5</td>            <td>GND</td>    <td>---</td>    <td>Ground</td></tr>
+  <tr><td>6</td>            <td>RGND</td>   <td>---</td>    <td>Red Ground</td></tr>
+  <tr><td>7</td>            <td>GGND</td>   <td>---</td>    <td>Green Ground</td></tr>
+  <tr><td>8</td>            <td>BGND</td>   <td>---</td>    <td>Blue Ground</td></tr>
+  <tr><td>9</td>            <td>+5V</td>    <td>--></td>    <td>+5 VDC</td></tr>
+  <tr><td>10</td>           <td>SGND</td>   <td>---</td>    <td>Sync Ground</td></tr>
+  <tr><td>11</td>           <td>ID0</td>    <td><--</td>    <td>Monitor ID Bit 0 (optional)</td></tr>
+  <tr><td>12</td>           <td>SDA</td>    <td><-></td>    <td>DDC Serial Data Line</td></tr>
+  <tr><td>13</td>  <td>HSYNC or CSYNC</td>  <td>--></td>    <td>Horizontal Sync (or Composite Sync)</td></tr>
+  <tr><td>14</td>           <td>VSYNC</td>  <td>--></td>    <td>Vertical Sync</td></tr>
+  <tr><td>15</td>           <td>SCL</td>    <td><-></td>    <td>DDC Data Clock Line</td></tr>
+</table>
+<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/port.png">
+<br>Learn more about [VGA pins](https://pinoutguide.com/Video/VGA15_pinout.shtml)
 
 
 <details> <summary>How screen SYNC works</summary>
-
+<br>
 To select the VGA screen resolution and speed, you need to chose one [VGA mode](http://tinyvga.com/vga-timing), and sent the specific signals at the rigth time.
 Because of the convenience, I also used the 800x600 px resolution at 60Hz witch uses a 40 MHz pixel frequency. By looking on the timing chart, it\`s seems that the timing can be devided by 4 witch will result in a pixel size of 4 actual pixels on a row at a resolution of 200x600 px but with a clk speed of 10MHz. For the beauty of it, by writing the same pixels collors every 4 rows, the screen can display 200x150 px resolution with a pixel beeing actually 4x4 px. 
 
@@ -45,47 +66,12 @@ Because of the convenience, I also used the 800x600 px resolution at 60Hz witch 
 </table>
 
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/screen.png">
-
 </details>
 
-
-
-
-
-
-
-
-
-
-
-
-
-### aplication 
+<details> <summary>How the board works</summary>
+<br>
 The videocard has 2x 12bit binnary counter, each made of 3x 4bit binnary counter(74LS161), witch count the displayable row and pixel on that row. The counted value is modified with some inverters(74LS04) at specified bits and outputed to some 8 inputs NAND gates(74LS30) to detect when the counter arrived at some specified numbers. The NAND gates set and reset 4 latches made with other type of NAND gates(74LS00), whose outputs indicate the HSYNC, VSYNC, VBLANK and HBLANK. The SYNC signals are dirrectly sent to the VGA port pins, and the BLANK signals indicate when to sent the collor values and when not to.
-
-
-
-## VGA Port Pinout
-<table>
-  <tr><td>Pin number</td>   <td>Name</td>   <td>Dir</td>    <td>Description</td></tr>
-  <tr><td>1</td>            <td>RED</td>    <td>--></td>    <td>Red Video(75 ohm, 0.7V)</td></tr>
-  <tr><td>2</td>            <td>GREEN</td>  <td>--></td>    <td>Green Video(75 ohm, 0.7V)</td><tr>
-  <tr><td>3</td>            <td>BLUE</td>   <td>--></td>    <td>Blue Video(75 ohm, 0.7V)</td></tr>
-  <tr><td>4</td>            <td>RES</td>    <td>   </td>    <td>Reserved</td></tr>
-  <tr><td>5</td>            <td>GND</td>    <td>---</td>    <td>Ground</td></tr>
-  <tr><td>6</td>            <td>RGND</td>   <td>---</td>    <td>Red Ground</td></tr>
-  <tr><td>7</td>            <td>GGND</td>   <td>---</td>    <td>Green Ground</td></tr>
-  <tr><td>8</td>            <td>BGND</td>   <td>---</td>    <td>Blue Ground</td></tr>
-  <tr><td>9</td>            <td>+5V</td>    <td>--></td>    <td>+5 VDC</td></tr>
-  <tr><td>10</td>           <td>SGND</td>   <td>---</td>    <td>Sync Ground</td></tr>
-  <tr><td>11</td>           <td>ID0</td>    <td><--</td>    <td>Monitor ID Bit 0 (optional)</td></tr>
-  <tr><td>12</td>           <td>SDA</td>    <td><-></td>    <td>DDC Serial Data Line</td></tr>
-  <tr><td>13</td>  <td>HSYNC or CSYNC</td>  <td>--></td>    <td>Horizontal Sync (or Composite Sync)</td></tr>
-  <tr><td>14</td>           <td>VSYNC</td>  <td>--></td>    <td>Vertical Sync</td></tr>
-  <tr><td>15</td>           <td>SCL</td>    <td><-></td>    <td>DDC Data Clock Line</td></tr>
-</table>
-<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/port.png">
-<br>Learn more about [VGA pins](https://pinoutguide.com/Video/VGA15_pinout.shtml)
+</details>
 
 
 
@@ -113,19 +99,24 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
 
 <table>
   <tr>
-    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/p.png"></td>
-    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r5.jpg"></td>
-    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r7.png"></td>
+    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/p.png"  height = 400 width= 400 ></td>
+    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r5.jpg" height = 400 width= 400 ></td>
+    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r7.png" height = 400 width= 400 ></td>
   </tr>
 </table>
 
 #### Schematic:
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/s1.png">
 
-<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/8clo.png">
-<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/bird.png">
+
+
+
+
+
+
+
+
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/e1.png">
-<img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/e2.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/rez.png">
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/vvv.png">
 
@@ -160,7 +151,15 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
 <details> <summary><b>connecting it to memory</b></summary>
 When connected to the 32K EEPROM(AT24C256), the data pins will have each 2 an 680 ohm and an 1.5 Kohm resistors to make 4 voltage points between 0V and 0.7V
 Because of the HIGH display speed, it is possible the aparition of some artifacts on the screen.
-To save a picture in the memory, the picture dimmension is reduced to 100x75px, the number of collors and shades is reduced (4 red shades x 4 green shades x 4 blue shades = 64 collor shades) and the picture binnary file is moddified and copied to the EEPROM. Also the enable pin must be LOW to display the picture, and HIGH when the SYNC signals are sent. The HBLANK and VBLANK signals are outputed in a NAND gate (74LS00) witch make the BLANK signal active HIGH, and for the EEPROM it is inverted again by passing again trouth the gate with both inputs tied together.
+To save a picture in the memory, the picture dimmension is reduced to 100x75px, the number of collors and shades is reduced(4 red shades x 4 green shades x 4 blue shades = 64 collor shades) and the picture binnary file is moddified and copied to the EEPROM. Also the enable pin must be LOW to display the picture, and HIGH when the SYNC signals are sent. The HBLANK and VBLANK signals are outputed in a NAND gate (74LS00) witch make the BLANK signal active HIGH, and for the EEPROM it is inverted again by passing again trouth the gate with both inputs tied together.
+<br>Also by connecting a processor, microcontroller or another processing circuit, you can make moving models and dynamic screens.
+<table>
+  <tr>
+    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/bird.png"  height = 400 width= 400 ></td>
+    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/8clo.png" height = 400 width= 400 ></td>
+    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/e2.png" height = 400 width= 400 ></td>
+  </tr>
+</table>
 </details>
 
 
