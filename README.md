@@ -3,7 +3,8 @@
 ## Description:
 This is an videocard made for my [8 bit computer]() witch I still work on. It should be able to display graphics, texts and pictures on all tipes of screens and diplays. 
 
-## How VGA monitors works
+<details> <summary>How VGA monitors works</summary>
+<br>
 The vga screen works by reciving analog signals between 0 and 0.7V for every collor at specific pixel position to set the separate color intensity of the red,green and blue collors at that pixel. 
 Also, to set the screen resolution and speed, 2 aditional SYNC signals are sented at very precise time intervals at the end of every line(HSYNC) and every screen(VSYNC) in witch time, no collor is sent/displayed
 
@@ -27,7 +28,10 @@ Also, to set the screen resolution and speed, 2 aditional SYNC signals are sente
   <tr><td>15</td>           <td>SCL</td>    <td><-></td>    <td>DDC Data Clock Line</td></tr>
 </table>
 <img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/port.png">
-Learn more about [VGA pins](https://pinoutguide.com/Video/VGA15_pinout.shtml)<br>
+Learn more about [VGA pins](https://pinoutguide.com/Video/VGA15_pinout.shtml)
+<br>
+</details> 
+
 
 <details> <summary>How screen SYNC works</summary>
 <br>
@@ -106,7 +110,7 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
   <tr>
     <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r7.png" height = 300 width= 300 ></td>
     <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/p.png"  height = 300 width= 300 ></td>
-    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r5.jpg" height = 300 width= 300 ></td>
+    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/e1.png" height = 300 width= 300 ></td>
   </tr>
 </table>
 
@@ -144,15 +148,12 @@ After [many](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pi
 
 When connected to the 32K EEPROM(AT24C256), the data pins will have each 2 an 680 ohm and an 1.5 Kohm resistors to make [4 voltage points between 0V and 0.7V](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/vvv.png).
 Because of the HIGH display speed, it is possible the aparition of some artifacts on the screen.
-To save a picture in the memory, the picture dimmension is reduced to 100x75px, the number of collors and shades is reduced(4 red shades x 4 green shades x 4 blue shades = 64 collor shades) and the picture binnary file is moddified and copied to the EEPROM. Also the enable pin must be LOW to display the picture, and HIGH when the SYNC signals are sent. The HBLANK and VBLANK signals are outputed in a NAND gate (74LS00) witch make the BLANK signal active HIGH, and for the EEPROM it is inverted again by passing again trouth the gate with both inputs tied together.
-<br> Also by connecting a processor, microcontroller or another processing circuit, you can make 
-
-[moving models](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/e2.png) and dynamic screens.
+To save a picture in the memory, the picture dimmension is reduced to 100x75px, the number of collors and shades is reduced(4 red shades x 4 green shades x 4 blue shades = 64 collor shades) and the picture binnary file is moddified and copied to the EEPROM. Also the enable pin must be LOW to display the picture, and HIGH when the SYNC signals are sent. The HBLANK and VBLANK signals are outputed in a NAND gate (74LS00) witch make the BLANK signal active HIGH, and for the EEPROM it is inverted again by passing again trouth the gate with both inputs tied together.<br> 
+Also by connecting a processor, microcontroller or another [processing circuit](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/V2.0/r5.jpg), you can make [moving models](https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/e2.png) and dynamic screens.
 <table>
   <tr>
     <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/bird.png" height = 300 width= 300 ></td>
     <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/8clo.png" height = 300 width= 300 ></td>
-    <td><img src="https://github.com/Tonikiller10000/VIDEOCARD/blob/main/VIDEOCARD_Pictures/General/e1.png"   height = 300 width= 300 ></td>
   </tr>
 </table>
 </details>
